@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="form-box">
+        <form #varForm="ngForm" (ngSubmit)="calcular()">
+            <h1 class="calculadora-title">Calculadora</h1>
+            <label>Número 1</label>
+            <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1">
+            <label>Número 2</label>
+            <input type="number" name="numero2" id="numero2" [(ngModel)]="numero2">
+            <div class="operadores">
+                <label for=""><input type="radio" name="subtracao" id="subtracao" value="subtracao" [(ngModel)]="operacao">-</label>
+                <label for=""><input type="radio" name="soma" id="soma" value="soma" [(ngModel)]="operacao">+</label>
+                <label for=""><input type="radio" name="multiplicacao" id="multiplicacao" value="multiplicacao" [(ngModel)]="operacao">*</label>
+                <label for=""><input type="radio" name="divisao" id="divisao" value="divisao" [(ngModel)]="operacao">/</label>
+            </div>
+            <button type="submit">Calcular</button>
+        </form>
+        <div class="display-result">
+            @if (result) {
+                <p class="result">Resultado<span id="result">{{result}}</span></p>
+            }@else{
+                <p>Aguardando...</p>
+            }
+        </div>
+    </div>
+</div>
